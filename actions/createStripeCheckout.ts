@@ -64,7 +64,6 @@ export async function createStripeCheckout(courseId: string, userId: string) {
 
     // 3. Create and configure Stripe Checkout Session with course details
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card", "link"],
       line_items: [
         {
           price_data: {
